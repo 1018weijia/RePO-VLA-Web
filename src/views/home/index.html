@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Intelligence (π)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: rgb(230, 238, 229);
+            min-height: 100vh;
+            color: #000;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        
+        main {
+            padding: 48px;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            max-width: 580px;
+            /* margin: 0 auto; */
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 400;
+        }
+        
+        .text-14 {
+            font-size: 14px;
+        }
+        
+        .mt-24 {
+            margin-top: 24px;
+        }
+        
+        .mb-36 {
+            margin-bottom: 36px;
+        }
+        
+        .tracking-widest {
+            letter-spacing: 0.05em;
+        }
+        
+        .leading-24 {
+            line-height: 24px;
+        }
+        
+        .list {
+            border-left: 1px solid #c4c4c4;
+        }
+        
+        .list-item {
+            display: flex;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .list-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 3px;
+            background-color: #000;
+            position: absolute;
+            left: -4px;
+            top: 44px;
+        }
+        
+        .card {
+            padding: 16px;
+            margin: 16px 0 16px 24px;
+            flex: 1;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: box-shadow 0.2s, background-color 0.2s;
+        }
+        
+        .card1 {
+            background-color: #fff;
+            border: 1px solid #adadad;
+            box-shadow: 0 0 0px #000, 0 0 0px #000, 3px 3px 0px #000;
+        }
+        
+        .card1:hover {
+            box-shadow: 0 0 0px #000, 0 0 0px #000, 6px 7px 0px #000;
+        }
+        
+        .card2 {
+            background-color: hsla(0, 0%, 100%, .6);
+            border: 1px solid #cacaca;
+        }
+        
+        .card2:hover {
+            box-shadow: 0 0 0px #000, 0 0 0px #000, 3px 3px 0px #c0bdad;
+        }
+        
+        .card3 {
+            border: 1px solid transparent;
+        }
+        
+        .card3:hover {
+            background-color: rgba(78, 78, 78, 0.066);
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+        
+        .flex-1 {
+            flex: 1;
+        }
+        
+        .line-clamp-1 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+        }
+        
+        .mr-2 {
+            margin-right: 8px;
+        }
+        
+        .text-12 {
+            font-size: 12px;
+        }
+        
+        .text-666 {
+            color: #666;
+        }
+        
+        h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 12px;
+            font-size: 14px;
+        }
+        
+        .footer {
+            margin-top: 80px;
+            padding: 40px 0;
+            font-size: 20px;
+            border-top: 1px solid #c4c4c4;
+        }
+        
+        .mt-40 {
+            margin-top: 40px;
+        }
+        
+        .mt-80 {
+            margin-top: 80px;
+        }
+        
+        .py-40 {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 24px;
+            }
+            
+            .container {
+                max-width: 100%;
+            }
+            
+            .member-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 16px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .member-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                margin-left: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h2 id="title">Physical Intelligence (π)</h2>
+            <div class="text-14 mt-24 mb-36 tracking-widest leading-24" id="description">
+                Physical Intelligence is bringing general-purpose AI into the physical world. We are a group of engineers, scientists, roboticists, and company builders developing foundation models and learning algorithms to power the robots of today and the physically-actuated devices of the future.
+            </div>
+            
+            <div class="list" id="list-container">
+                <!-- 列表项将通过JavaScript动态生成 -->
+            </div>
+            
+            <h3 class="mt-40 mb-20">Team</h3>
+            <div class="member-grid" id="members-container">
+                <!-- 团队成员将通过JavaScript动态生成 -->
+            </div>
+            
+            <div class="footer mt-80 py-40 text-20">
+                Physical Intelligence
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 数据配置
+        const pageData = {
+            info: {
+                title: 'Physical Intelligence (π)',
+                desc: 'Physical Intelligence is bringing general-purpose AI into the physical world. We are a group of engineers, scientists, roboticists, and company builders developing foundation models and learning algorithms to power the robots of today and the physically-actuated devices of the future.'
+            },
+            
+            members: ['Xu Rongtao', 'Zheng Hao', 'Ji kangyi', 'Tian Ruozai', 'Yang Shujian'],
+            
+            /**
+             * type: 1: 最高优先级, 2: 次优先级， 3: 最低优先级
+             */
+            list: [
+                {
+                    title: `Moravec's Paradox and the Robot Olympics`,
+                    desc: 'By fine-tuning our latest model, we were able to solve a series of very difficult manipulation challenge tasks.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 1,
+                },
+                {
+                    title: `The Robot Olympics`,
+                    desc: 'We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 2,
+                },
+                {
+                    title: `The Robot Olympics`,
+                    desc: 'We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 3,
+                },
+                {
+                    title: `Moravec's Paradox and the Robot Olympics`,
+                    desc: 'By fine-tuning our latest model, we were able to solve a series of very difficult manipulation challenge tasks.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 1,
+                },
+                {
+                    title: `The Robot Olympics`,
+                    desc: 'We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 2,
+                },
+                {
+                    title: `The Robot Olympics`,
+                    desc: 'We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 3,
+                },
+                {
+                    title: `Moravec's Paradox and the Robot Olympics`,
+                    desc: 'By fine-tuning our latest model, we were able to solve a series of very difficult manipulation challenge tasks.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 1,
+                },
+                {
+                    title: `The Robot Olympics`,
+                    desc: 'We are organizing the Robot Olympics, a competition for robots to solve a series of difficult manipulation challenges.',
+                    date: 'December 22, 2025',
+                    link: 'https://www.youtube.com/watch?v=2ZJx4W5z9b8',
+                    type: 3,
+                },
+            ]
+        };
+        
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置标题和描述
+            document.getElementById('title').textContent = pageData.info.title;
+            document.getElementById('description').textContent = pageData.info.desc;
+            
+            // 生成列表项
+            const listContainer = document.getElementById('list-container');
+            pageData.list.forEach(item => {
+                const listItem = document.createElement('div');
+                listItem.className = 'list-item';
+                
+                listItem.innerHTML = `
+                    <div class="list-dot"></div>
+                    <a class="card card${item.type}" href="${item.link}" target="_blank">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex-1 line-clamp-1 mr-2">${item.title}</div>
+                            <div class="text-666 text-12">${item.date}</div>
+                        </div>
+                        <div class="text-666 text-14">${item.desc}</div>
+                    </a>
+                `;
+                
+                listContainer.appendChild(listItem);
+            });
+            
+            // 生成团队成员
+            const membersContainer = document.getElementById('members-container');
+            pageData.members.forEach(member => {
+                const memberDiv = document.createElement('div');
+                memberDiv.textContent = member;
+                membersContainer.appendChild(memberDiv);
+            });
+        });
+        
+        // 数据更新示例函数
+        function updateList(newList) {
+            const listContainer = document.getElementById('list-container');
+            listContainer.innerHTML = '';
+            
+            newList.forEach(item => {
+                const listItem = document.createElement('div');
+                listItem.className = 'list-item';
+                
+                listItem.innerHTML = `
+                    <div class="list-dot"></div>
+                    <a class="card card${item.type}" href="${item.link}" target="_blank">
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex-1 line-clamp-1 mr-2">${item.title}</div>
+                            <div class="text-666 text-12">${item.date}</div>
+                        </div>
+                        <div class="text-666 text-14">${item.desc}</div>
+                    </a>
+                `;
+                
+                listContainer.appendChild(listItem);
+            });
+        }
+        
+        function updateMembers(newMembers) {
+            const membersContainer = document.getElementById('members-container');
+            membersContainer.innerHTML = '';
+            
+            newMembers.forEach(member => {
+                const memberDiv = document.createElement('div');
+                memberDiv.textContent = member;
+                membersContainer.appendChild(memberDiv);
+            });
+        }
+        
+        // 示例：如何通过函数更新数据
+        // updateList([...])  // 传入新的列表数据
+        // updateMembers([...])  // 传入新的团队成员数据
+    </script>
+</body>
+</html>
