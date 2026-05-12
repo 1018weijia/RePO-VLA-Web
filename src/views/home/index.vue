@@ -21,8 +21,7 @@ import {
 <template>
   <main class="project-page">
     <section class="hero">
-      <h1>{{ info.title }}</h1>
-      <p class="subtitle">{{ info.subtitle }}</p>
+      <h1>{{ info.title }}: {{ info.subtitle }}</h1>
       <p class="hero-desc">{{ info.desc }}</p>
 
       <div class="author-list">
@@ -182,7 +181,14 @@ $accent-2: #0f766e;
     linear-gradient(180deg, #f7fffb 0%, #eefaf5 48%, #f8fbff 100%),
     $bg;
   color: $text;
-  font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
 .hero,
@@ -220,9 +226,10 @@ p {
 
 h1 {
   margin-top: 14px;
-  font-size: clamp(64px, 11vw, 132px);
-  line-height: 0.9;
-  letter-spacing: -0.08em;
+  max-width: 980px;
+  font-size: clamp(34px, 4.8vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 h2 {
@@ -236,15 +243,6 @@ h3 {
   font-size: clamp(26px, 3.2vw, 34px);
   line-height: 1.16;
   letter-spacing: -0.025em;
-}
-
-.subtitle {
-  margin-top: 18px;
-  max-width: 920px;
-  color: $accent-2;
-  font-size: clamp(22px, 3vw, 36px);
-  line-height: 1.18;
-  font-weight: 700;
 }
 
 .hero-desc {
@@ -277,10 +275,11 @@ h3 {
 
 .author-item {
   color: #0f172a;
-  font-size: clamp(24px, 2.4vw, 38px) !important;
+  font-size: clamp(16px, 1.25vw, 21px) !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
 
   sup {
     margin-left: 2px;
@@ -322,8 +321,9 @@ h3 {
     background: transparent;
     padding: 0 6px;
     color: #1f2937;
-    font-size: clamp(14px, 1.55vw, 33px);
+    font-size: clamp(14px, 1.05vw, 17px);
     line-height: 1.55;
+    font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
     sup {
       margin-right: 2px;
       font-size: 0.75em;
@@ -341,7 +341,8 @@ h3 {
 
   span {
     color: #334155;
-    font-size: 22px;
+    font-size: clamp(13px, 0.95vw, 16px);
+    font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
   }
 }
 
@@ -636,15 +637,15 @@ code {
   }
 
   .author-item {
-    font-size: clamp(20px, 4.8vw, 28px) !important;
+    font-size: clamp(14px, 3.8vw, 18px) !important;
   }
 
   .affiliation-list.compact.mapped span {
-    font-size: clamp(20px, 3.5vw, 26px);
+    font-size: clamp(13px, 3vw, 15px);
   }
 
   .author-note-list span {
-    font-size: 20px;
+    font-size: clamp(12px, 2.8vw, 14px);
   }
 }
 </style>
