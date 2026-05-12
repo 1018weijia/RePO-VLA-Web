@@ -76,7 +76,7 @@ export const projectLinks = [
   // },
   {
     label: 'BibTeX',
-    href: '',
+    href: '#bibtex',
   },
 ]
 
@@ -125,7 +125,7 @@ export const methodCards = [
 export const demoSections = [
   {
     title: 'Inference Normal',
-    // desc: 'End-to-end RePO-VLA rollouts showing autonomous recovery during contact-rich bimanual execution.',
+    desc: 'End-to-end RePO-VLA rollouts showing autonomous recovery during contact-rich bimanual execution.',
     videos: [
       {
         title: 'Open Laptop',
@@ -147,7 +147,7 @@ export const demoSections = [
   },
   {
     title: 'Injected Error Recovery',
-    // desc: 'Controlled error-injection cases used to evaluate whether the policy can restore task progress from adverse states.',
+    desc: 'Controlled error-injection cases used to evaluate whether the policy can restore task progress from adverse states.',
     videos: [
       {
         title: 'Open Laptop',
@@ -169,7 +169,7 @@ export const demoSections = [
   },
   {
     title: 'Failure Mode Examples',
-    // desc: 'Bottle-picking examples covering grasp slip, position offset, and premature close recovery.',
+    desc: 'Bottle-picking examples covering grasp slip, position offset, and premature close recovery.',
     videos: [
       {
         title: 'Grasp Slip Recovery',
@@ -218,9 +218,19 @@ export const resources = [
   },
   {
     label: 'BibTeX',
-    href: '',
+    href: '#bibtex',
   },
 ]
+
+export const bibtex = `@misc{liufu2026repovlarecoverydrivenpolicyoptimization,
+      title={RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Models},
+      author={Weijia Liufu and Xiaoyu Guo and Ruiyi Chen and Jingzhi Liu and Kaidong Zhang and Xiwen Liang and Jianqi Lin and Dawei Sun and Yuze Wang and Rongtao Xu and Bingqian Lin and Bowen Yang and Tongtong Cao and Bowen Peng and Dongyu Zhang and Guangrun Wang and Min Wang and Liang Lin and Xiaodan Liang},
+      year={2026},
+      eprint={2605.09410},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2605.09410},
+}`
 
 export const abstractText = `Vision-Language-Action models remain brittle in long-horizon, contact-rich manipulation because success-only imitation provides little supervision for execution drift, while failed rollouts are often discarded. RePO-VLA assigns distinct roles to success, recovery, and failure trajectories, turning adverse states into corrective rollouts and using value-conditioned refinement to bias actions toward the learned success manifold.`
 
