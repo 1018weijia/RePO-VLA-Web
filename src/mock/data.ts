@@ -4,7 +4,7 @@ const asset = (path: string) => `${BASE}${path}`
 export const info = {
   title: 'RePO-VLA',
   subtitle: 'Recovery-Driven Policy Optimization for Vision-Language-Action Models',
-  // desc: 'RePO-VLA teaches bimanual robot policies to recover from execution drift, grasp failures, object slips, and contact-rich disturbances by learning from success, failure, and recovery trajectories.',
+  desc: 'RePO-VLA teaches bimanual robot policies to recover from execution drift, grasp failures, object slips, and contact-rich disturbances by learning from success, failure, and recovery trajectories.',
   venue: 'Project Page',
   tags: ['Vision-Language-Action', 'Bimanual Manipulation', 'Failure Recovery', 'Robot Learning'],
 }
