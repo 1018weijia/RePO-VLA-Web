@@ -1,3 +1,6 @@
+const BASE = import.meta.env.BASE_URL
+const asset = (path: string) => `${BASE}${path}`
+
 export const info = {
   title: 'RePO-VLA',
   subtitle: 'Recovery-Driven Policy Optimization for Vision-Language-Action Models',
@@ -61,7 +64,7 @@ export const highlights = [
 export const projectLinks = [
   {
     label: 'Paper',
-    href: '/files/repo-vla.pdf',
+    href: asset('files/repo-vla.pdf'),
   },
   {
     label: 'Code',
@@ -81,13 +84,13 @@ export const figures = [
   {
     title: 'Why Recovery Matters',
     desc: 'RePO-VLA targets execution drift in long-horizon bimanual manipulation, where adverse states are often recoverable but poorly supervised by success-only imitation.',
-    src: '/Figures/Intro.png',
+    src: asset('Figures/Intro.png'),
     type: 'image',
   },
   {
     title: 'Method Overview',
     desc: 'The framework builds recovery data, learns progress-aware semantic values, and refines a value-conditioned VLA policy.',
-    src: '/Figures/Method.png',
+    src: asset('Figures/Method.png'),
     type: 'image',
   },
   // {
@@ -126,19 +129,19 @@ export const demoSections = [
     videos: [
       {
         title: 'Inference Demo 1',
-        src: '/Demo/inference/demo1.mp4',
+        src: asset('Demo/inference/demo1.mp4'),
       },
       {
         title: 'Inference Demo 2',
-        src: '/Demo/inference/demo2.mp4',
+        src: asset('Demo/inference/demo2.mp4'),
       },
       {
         title: 'Inference Demo 3',
-        src: '/Demo/inference/demo3.mp4',
+        src: asset('Demo/inference/demo3.mp4'),
       },
       {
         title: 'Inference Demo 4',
-        src: '/Demo/inference/demo4.mp4',
+        src: asset('Demo/inference/demo4.mp4'),
       },
     ],
   },
@@ -148,19 +151,19 @@ export const demoSections = [
     videos: [
       {
         title: 'Injected Error Demo 1',
-        src: '/Demo/inject_error/demo1.mp4',
+        src: asset('Demo/inject_error/demo1.mp4'),
       },
       {
         title: 'Injected Error Demo 2',
-        src: '/Demo/inject_error/demo2.mp4',
+        src: asset('Demo/inject_error/demo2.mp4'),
       },
       {
         title: 'Injected Error Demo 3',
-        src: '/Demo/inject_error/demo3.mp4',
+        src: asset('Demo/inject_error/demo3.mp4'),
       },
       {
         title: 'Injected Error Demo 4',
-        src: '/Demo/inject_error/demo4.mp4',
+        src: asset('Demo/inject_error/demo4.mp4'),
       },
     ],
   },
@@ -170,27 +173,27 @@ export const demoSections = [
     videos: [
       {
         title: 'Grasp Slip Recovery',
-        src: '/Demo/pick_diverse_bottles_grasp_slip_recovery.mp4',
+        src: asset('Demo/pick_diverse_bottles_grasp_slip_recovery.mp4'),
       },
       {
         title: 'Grasp Slip Recovery 2',
-        src: '/Demo/pick_diverse_bottles_grasp_slip_recovery2.mp4',
+        src: asset('Demo/pick_diverse_bottles_grasp_slip_recovery2.mp4'),
       },
       {
         title: 'Position Offset Failure',
-        src: '/Demo/pick_diverse_bottles_position_offset_failure.mp4',
+        src: asset('Demo/pick_diverse_bottles_position_offset_failure.mp4'),
       },
       {
         title: 'Position Offset Recovery',
-        src: '/Demo/pick_diverse_bottles_position_offset_recovery.mp4',
+        src: asset('Demo/pick_diverse_bottles_position_offset_recovery.mp4'),
       },
       {
         title: 'Premature Close Recovery 1',
-        src: '/Demo/pick_diverse_bottles_premature_close_recovery1.mp4',
+        src: asset('Demo/pick_diverse_bottles_premature_close_recovery1.mp4'),
       },
       {
         title: 'Premature Close Recovery 2',
-        src: '/Demo/pick_diverse_bottles_premature_close_recovery2.mp4',
+        src: asset('Demo/pick_diverse_bottles_premature_close_recovery2.mp4'),
       },
       // {
       //   title: 'Premature Close Recovery 3',
@@ -203,7 +206,7 @@ export const demoSections = [
 export const resources = [
   {
     label: 'Paper PDF',
-    href: '/files/repo-vla.pdf',
+    href: asset('files/repo-vla.pdf'),
   },
   {
     label: 'Code',
@@ -241,7 +244,7 @@ export const list: ListItem[] = [
     title: 'Project Overview',
     desc: abstractText,
     date: 'Project Page',
-    link: '/files/repo-vla.pdf',
+    link: asset('files/repo-vla.pdf'),
     type: 1,
     detail: [
       {
