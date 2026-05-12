@@ -40,6 +40,43 @@ export const affiliations = [
   "Huawei Noah's Ark Lab",
 ]
 
+export const authorAffiliations = [
+  { id: 1, name: 'Sun Yat-sen University' },
+  { id: 2, name: 'South China University of Technology' },
+  { id: 3, name: 'Peng Cheng Laboratory' },
+  { id: 4, name: 'Harbin Institute of Technology' },
+  { id: 5, name: 'Institute of Automation, Chinese Academy of Sciences' },
+  { id: 6, name: "Huawei Noah's Ark Lab" },
+]
+
+export const authorEntries = [
+  { name: 'Weijia Liufu', indices: '1,*' },
+  { name: 'Xiaoyu Guo', indices: '2,3,*,†' },
+  { name: 'Ruiyi Chen', indices: '1' },
+  { name: 'Jingzhi Liu', indices: '1' },
+  { name: 'Kaidong Zhang', indices: '1' },
+  { name: 'Xiwen Liang', indices: '1' },
+  { name: 'Jianqi Lin', indices: '1' },
+  { name: 'Dawei Sun', indices: '1' },
+  { name: 'Yuze Wang', indices: '4' },
+  { name: 'Rongtao Xu', indices: '5' },
+  { name: 'Bingqian Lin', indices: '1' },
+  { name: 'Bowen Yang', indices: '6' },
+  { name: 'Tongtong Cao', indices: '6' },
+  { name: 'Bowen Peng', indices: '3' },
+  { name: 'Dongyu Zhang', indices: '1' },
+  { name: 'Guangrun Wang', indices: '1' },
+  { name: 'Min Wang', indices: '2' },
+  { name: 'Liang Lin', indices: '1,3' },
+  { name: 'Xiaodan Liang', indices: '1,3,‡' },
+]
+
+export const authorNotes = [
+  '*Equal contribution.',
+  '†Project leader.',
+  '‡Corresponding author.',
+]
+
 export const footerDesc = 'RePO-VLA Project Page'
 
 export const highlights = [

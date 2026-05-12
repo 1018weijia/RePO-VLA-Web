@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import {
   abstractText,
+  authorAffiliations,
+  authorEntries,
+  authorNotes,
   affiliations,
   bibtex,
   demoSections,
@@ -23,11 +26,19 @@ import {
       <p class="hero-desc">{{ info.desc }}</p>
 
       <div class="author-list">
-        <span v-for="member in members" :key="member">{{ member }}</span>
+        <span v-for="author in authorEntries" :key="author.name" class="author-item">
+          {{ author.name }}<sup>{{ author.indices }}</sup>
+        </span>
       </div>
 
-      <div class="affiliation-list compact">
-        <span v-for="affiliation in affiliations" :key="affiliation">{{ affiliation }}</span>
+      <div class="affiliation-list compact mapped">
+        <span v-for="affiliation in authorAffiliations" :key="affiliation.id">
+          <sup>{{ affiliation.id }}</sup>{{ affiliation.name }}
+        </span>
+      </div>
+
+      <div class="author-note-list">
+        <span v-for="note in authorNotes" :key="note">{{ note }}</span>
       </div>
 
       <div class="link-row">
@@ -130,7 +141,6 @@ import {
     <section id="bibtex" class="section card-section bibtex-section">
       <div class="section-heading centered">
         <div class="section-kicker">Citation</div>
-        <h2>BibTeX</h2>
       </div>
       <pre class="bibtex-block"><code>{{ bibtex }}</code></pre>
     </section>
@@ -172,14 +182,7 @@ $accent-2: #0f766e;
     linear-gradient(180deg, #f7fffb 0%, #eefaf5 48%, #f8fbff 100%),
     $bg;
   color: $text;
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
+  font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
 }
 
 .hero,
@@ -272,6 +275,21 @@ h3 {
   }
 }
 
+.author-item {
+  color: #0f172a;
+  font-size: clamp(24px, 2.4vw, 38px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+
+  sup {
+    margin-left: 2px;
+    font-size: 0.52em;
+    font-weight: 700;
+    vertical-align: super;
+  }
+}
+
 .author-list.bottom span {
   border: 1px solid $line;
   border-radius: 999px;
@@ -294,6 +312,37 @@ h3 {
 
 .affiliation-list.compact {
   margin-top: 16px;
+}
+
+.affiliation-list.compact.mapped {
+  max-width: 1060px;
+
+  span {
+    border: none;
+    background: transparent;
+    padding: 0 6px;
+    color: #1f2937;
+    font-size: clamp(14px, 1.55vw, 33px);
+    line-height: 1.55;
+    sup {
+      margin-right: 2px;
+      font-size: 0.75em;
+      vertical-align: super;
+    }
+  }
+}
+
+.author-note-list {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+
+  span {
+    color: #334155;
+    font-size: 22px;
+  }
 }
 
 .link-row {
@@ -527,6 +576,7 @@ h3 {
   overflow-x: auto;
   text-align: left;
   white-space: pre;
+  font-family: inherit;
 }
 
 footer {
@@ -583,6 +633,18 @@ code {
 
   .figure-frame {
     padding: 8px;
+  }
+
+  .author-item {
+    font-size: clamp(20px, 4.8vw, 28px) !important;
+  }
+
+  .affiliation-list.compact.mapped span {
+    font-size: clamp(20px, 3.5vw, 26px);
+  }
+
+  .author-note-list span {
+    font-size: 20px;
   }
 }
 </style>
