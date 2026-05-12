@@ -2,6 +2,7 @@
 import {
   abstractText,
   affiliations,
+  bibtex,
   demoSections,
   figures,
   footerDesc,
@@ -36,8 +37,8 @@ import {
           class="project-link"
           :class="{ disabled: !link.href }"
           :href="link.href || undefined"
-          target="_blank"
-          rel="noreferrer"
+          :target="link.href?.startsWith('#') ? undefined : '_blank'"
+          :rel="link.href?.startsWith('#') ? undefined : 'noreferrer'"
         >
           {{ link.label }}
         </a>
@@ -124,6 +125,14 @@ import {
           </article>
         </div>
       </div>
+    </section>
+
+    <section id="bibtex" class="section card-section bibtex-section">
+      <div class="section-heading centered">
+        <div class="section-kicker">Citation</div>
+        <h2>BibTeX</h2>
+      </div>
+      <pre class="bibtex-block"><code>{{ bibtex }}</code></pre>
     </section>
 
 <!--
@@ -500,6 +509,24 @@ h3 {
 
 .team-section {
   text-align: center;
+}
+
+.bibtex-section {
+  scroll-margin-top: 24px;
+}
+
+.bibtex-block {
+  margin: 0;
+  border: 1px solid $line;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  color: $text;
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-x: auto;
+  text-align: left;
+  white-space: pre;
 }
 
 footer {

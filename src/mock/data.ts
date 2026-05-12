@@ -64,16 +64,16 @@ export const highlights = [
 export const projectLinks = [
   {
     label: 'Paper',
-    href: 'http://arxiv.org/abs/2605.09410',
+    href: 'https://arxiv.org/pdf/2605.09410',
   },
   {
     label: 'Code',
-    href: '',
+    href: 'https://1018weijia.github.io/RePO-VLA-Web/',
   },
-  {
-    label: 'Benchmark',
-    href: '',
-  },
+  // {
+  //   label: 'Benchmark',
+  //   href: 'https://1018weijia.github.io/RePO-VLA-Web/',
+  // },
   {
     label: 'BibTeX',
     href: '',
@@ -206,15 +206,15 @@ export const demoSections = [
 export const resources = [
   {
     label: 'Paper PDF',
-    href: 'http://arxiv.org/abs/2605.09410',
+    href: 'https://arxiv.org/pdf/2605.09410',
   },
   {
     label: 'Code',
-    href: '',
+    href: 'https://1018weijia.github.io/RePO-VLA-Web/',
   },
   {
     label: 'Dataset / Benchmark',
-    href: '',
+    href: 'https://1018weijia.github.io/RePO-VLA-Web/',
   },
   {
     label: 'BibTeX',
@@ -244,7 +244,7 @@ export const list: ListItem[] = [
     title: 'Project Overview',
     desc: abstractText,
     date: 'Project Page',
-    link: 'http://arxiv.org/abs/2605.09410',
+    link: 'https://arxiv.org/pdf/2605.09410',
     type: 1,
     detail: [
       {
