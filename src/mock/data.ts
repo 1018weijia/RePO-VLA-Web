@@ -64,7 +64,7 @@ export const highlights = [
 export const projectLinks = [
   {
     label: 'Paper',
-    href: asset('files/repo-vla.pdf'),
+    href: asset('http://arxiv.org/abs/2605.09410'),
   },
   {
     label: 'Code',
@@ -124,45 +124,45 @@ export const methodCards = [
 
 export const demoSections = [
   {
-    title: 'Inference Under Disturbance',
-    desc: 'End-to-end RePO-VLA rollouts showing autonomous recovery during contact-rich bimanual execution.',
+    title: 'Inference Normal',
+    // desc: 'End-to-end RePO-VLA rollouts showing autonomous recovery during contact-rich bimanual execution.',
     videos: [
       {
-        title: 'Inference Demo 1',
+        title: 'Open Laptop',
         src: asset('Demo/inference/demo1.mp4'),
       },
       {
-        title: 'Inference Demo 2',
+        title: 'Blocks Ranking RGB',
         src: asset('Demo/inference/demo2.mp4'),
       },
       {
-        title: 'Inference Demo 3',
+        title: 'Blocks Ranking RGB',
         src: asset('Demo/inference/demo3.mp4'),
       },
       {
-        title: 'Inference Demo 4',
+        title: 'Lift Pot',
         src: asset('Demo/inference/demo4.mp4'),
       },
     ],
   },
   {
     title: 'Injected Error Recovery',
-    desc: 'Controlled error-injection cases used to evaluate whether the policy can restore task progress from adverse states.',
+    // desc: 'Controlled error-injection cases used to evaluate whether the policy can restore task progress from adverse states.',
     videos: [
       {
-        title: 'Injected Error Demo 1',
+        title: 'Open Laptop',
         src: asset('Demo/inject_error/demo1.mp4'),
       },
       {
-        title: 'Injected Error Demo 2',
+        title: 'Blocks Ranking RGB',
         src: asset('Demo/inject_error/demo2.mp4'),
       },
       {
-        title: 'Injected Error Demo 3',
+        title: 'Move Stapler Pad',
         src: asset('Demo/inject_error/demo3.mp4'),
       },
       {
-        title: 'Injected Error Demo 4',
+        title: 'Blocks Ranking Size',
         src: asset('Demo/inject_error/demo4.mp4'),
       },
     ],
@@ -206,7 +206,7 @@ export const demoSections = [
 export const resources = [
   {
     label: 'Paper PDF',
-    href: asset('files/repo-vla.pdf'),
+    href: asset('http://arxiv.org/abs/2605.09410'),
   },
   {
     label: 'Code',
@@ -244,7 +244,7 @@ export const list: ListItem[] = [
     title: 'Project Overview',
     desc: abstractText,
     date: 'Project Page',
-    link: asset('files/repo-vla.pdf'),
+    link: asset('http://arxiv.org/abs/2605.09410'),
     type: 1,
     detail: [
       {
