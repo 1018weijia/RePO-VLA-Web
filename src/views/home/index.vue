@@ -79,7 +79,7 @@ import {
     <section id="method" class="section card-section">
       <div class="section-heading centered">
         <div class="section-kicker">Method</div>
-        <h2>One policy for nominal execution and recovery</h2>
+        <h4>One policy for nominal execution and recovery</h4>
       </div>
       <div class="method-stack">
         <article v-for="(card, index) in methodCards" :key="card.title" class="method-row">
@@ -92,6 +92,7 @@ import {
       </div>
     </section>
 
+  <!-- 
     <section class="section">
       <div class="section-heading centered">
         <div class="section-kicker">Results</div>
@@ -103,6 +104,7 @@ import {
         </article>
       </div>
     </section>
+  -->
 
     <section id="demos" class="section">
       <div class="section-heading centered">

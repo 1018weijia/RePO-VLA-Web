@@ -169,7 +169,7 @@ export const demoSections = [
   },
   {
     title: 'Failure Mode Examples',
-    desc: 'Bottle-picking examples covering grasp slip, position offset, and premature close recovery.',
+    // desc: 'Bottle-picking examples covering grasp slip, position offset, and premature close recovery.',
     videos: [
       {
         title: 'Grasp Slip Recovery',
