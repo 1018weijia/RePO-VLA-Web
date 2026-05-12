@@ -3,6 +3,7 @@ import {
   abstractText,
   authorAffiliations,
   authorEntries,
+  institutionLogos,
   authorNotes,
   affiliations,
   bibtex,
@@ -21,7 +22,10 @@ import {
 <template>
   <main class="project-page">
     <section class="hero">
-      <h1>{{ info.title }}: {{ info.subtitle }}</h1>
+      <h1 class="hero-title">
+        <span class="brand-re">RePO</span><span class="brand-vla">-VLA</span>
+        <span class="hero-title-rest">: {{ info.subtitle }}</span>
+      </h1>
       <p class="hero-desc">{{ info.desc }}</p>
 
       <div class="author-list">
@@ -38,6 +42,12 @@ import {
 
       <div class="author-note-list">
         <span v-for="note in authorNotes" :key="note">{{ note }}</span>
+      </div>
+
+      <div class="institution-logo-strip">
+        <div v-for="logo in institutionLogos" :key="logo.name" class="institution-logo-item">
+          <img :src="logo.src" :alt="logo.name" />
+        </div>
       </div>
 
       <div class="link-row">
@@ -73,7 +83,7 @@ import {
     <section class="section">
       <div class="section-heading centered">
         <div class="section-kicker">Main Figures</div>
-        <h2>Recovery-driven policy optimization</h2>
+        <!-- <h2>Recovery-driven policy optimization</h2> -->
       </div>
 
       <article v-for="figure in figures" :key="figure.src" class="figure-block">
@@ -120,7 +130,7 @@ import {
     <section id="demos" class="section">
       <div class="section-heading centered">
         <div class="section-kicker">Demos</div>
-        <h2>Visual recovery behavior</h2>
+        <!-- <h2>Visual recovery behavior</h2> -->
       </div>
 
       <div v-for="section in demoSections" :key="section.title" class="demo-group">
@@ -164,9 +174,9 @@ import {
 </template>
 
 <style lang="scss" scoped>
-$bg: #f3fbf7;
-$panel: rgba(255, 255, 255, 0.84);
-$panel-strong: rgba(236, 253, 245, 0.9);
+$bg: #f8fafc;
+$panel: #ffffff;
+$panel-strong: #ffffff;
 $line: rgba(15, 118, 110, 0.16);
 $text: #12312b;
 $muted: #54736b;
@@ -176,9 +186,9 @@ $accent-2: #0f766e;
 .project-page {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(167, 243, 208, 0.64), transparent 34rem),
-    radial-gradient(circle at 82% 8%, rgba(186, 230, 253, 0.55), transparent 32rem),
-    linear-gradient(180deg, #f7fffb 0%, #eefaf5 48%, #f8fbff 100%),
+    radial-gradient(circle at top left, rgba(226, 232, 240, 0.36), transparent 36rem),
+    radial-gradient(circle at 82% 8%, rgba(219, 234, 254, 0.32), transparent 34rem),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%),
     $bg;
   color: $text;
   font-family:
@@ -199,13 +209,30 @@ footer {
 }
 
 .hero {
-  min-height: 86vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 72px 0 52px;
+  justify-content: flex-start;
+  padding: 26px 0 42px;
   text-align: center;
+  border-radius: 28px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Optional decorative layer: set image in --hero-pattern when ready */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-pattern, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
 }
 
 .venue,
@@ -230,6 +257,26 @@ h1 {
   font-size: clamp(34px, 4.8vw, 58px);
   line-height: 1.1;
   letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+  color: #111827;
+  font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
+}
+
+.hero-title {
+  font-weight: 700;
+}
+
+.brand-re {
+  color: #d97706;
+}
+
+.brand-vla {
+  color: $accent;
+}
+
+.hero-title-rest {
+  color: #111827;
 }
 
 h2 {
@@ -251,6 +298,8 @@ h3 {
   color: $muted;
   font-size: 18px;
   line-height: 1.75;
+  position: relative;
+  z-index: 1;
 }
 
 .author-list,
@@ -265,6 +314,8 @@ h3 {
 .author-list {
   margin-top: 28px;
   max-width: 960px;
+  position: relative;
+  z-index: 1;
 
   span {
     color: $accent-2;
@@ -311,6 +362,8 @@ h3 {
 
 .affiliation-list.compact {
   margin-top: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .affiliation-list.compact.mapped {
@@ -338,6 +391,8 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 14px;
+  position: relative;
+  z-index: 1;
 
   span {
     color: #334155;
@@ -346,23 +401,56 @@ h3 {
   }
 }
 
+.institution-logo-strip {
+  margin-top: 18px;
+  width: min(840px, 100%);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.institution-logo-item {
+  padding: 4px 6px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.institution-logo-item img {
+  max-width: 100%;
+  max-height: 76px;
+  object-fit: contain;
+}
+
 .link-row {
   margin-top: 34px;
+  position: relative;
+  z-index: 1;
 }
 
 .project-link {
-  border: 1px solid $line;
+  border: 1px solid #e5e7eb;
   border-radius: 999px;
-  background: $accent;
-  box-shadow: 0 14px 32px rgba(20, 185, 129, 0.24);
+  background: #f3f4f6;
+  box-shadow: none;
   padding: 13px 22px;
-  color: #ffffff;
+  color: #374151;
   font-weight: 800;
   text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.project-link:hover {
+  background: #e5e7eb;
 }
 
 .project-link.disabled {
-  background: rgba(255, 255, 255, 0.78);
+  background: #f3f4f6;
   box-shadow: none;
   color: $muted;
   pointer-events: none;
@@ -596,6 +684,12 @@ code {
     grid-template-columns: 1fr 1fr;
   }
 
+  .institution-logo-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(720px, 100%);
+    gap: 8px;
+  }
+
   .figure-frame {
     padding: 12px;
   }
@@ -620,6 +714,20 @@ code {
   .metrics,
   .video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .institution-logo-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .institution-logo-item {
+    height: 74px;
+    padding: 4px 6px;
+  }
+
+  .institution-logo-item img {
+    max-height: 62px;
   }
 
   .card-section,

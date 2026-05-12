@@ -77,6 +77,15 @@ export const authorNotes = [
   '‡Corresponding author.',
 ]
 
+export const institutionLogos = [
+  { name: 'Sun Yat-sen University', src: asset('Figures/sysu.png') }, // 1
+  { name: 'South China University of Technology', src: asset('Figures/scut.jpg') }, // 2
+  { name: 'Peng Cheng Laboratory', src: asset('Figures/pcl.png') }, // 3
+  { name: 'Harbin Institute of Technology', src: asset('Figures/hit.png') }, // 4
+  { name: 'Institute of Automation, Chinese Academy of Sciences', src: asset('Figures/CASIA.jpg') }, // 5
+  { name: "Huawei Noah's Ark Lab", src: asset('Figures/Huawei.png') }, // 6
+]
+
 export const footerDesc = 'RePO-VLA Project Page'
 
 export const highlights = [
