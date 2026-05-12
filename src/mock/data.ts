@@ -64,7 +64,7 @@ export const highlights = [
 export const projectLinks = [
   {
     label: 'Paper',
-    href: asset('http://arxiv.org/abs/2605.09410'),
+    href: 'http://arxiv.org/abs/2605.09410',
   },
   {
     label: 'Code',
@@ -206,7 +206,7 @@ export const demoSections = [
 export const resources = [
   {
     label: 'Paper PDF',
-    href: asset('http://arxiv.org/abs/2605.09410'),
+    href: 'http://arxiv.org/abs/2605.09410',
   },
   {
     label: 'Code',
@@ -244,7 +244,7 @@ export const list: ListItem[] = [
     title: 'Project Overview',
     desc: abstractText,
     date: 'Project Page',
-    link: asset('http://arxiv.org/abs/2605.09410'),
+    link: 'http://arxiv.org/abs/2605.09410',
     type: 1,
     detail: [
       {
