@@ -227,6 +227,30 @@ export const demoSections = [
       // },
     ],
   },
+
+  {
+  title: 'Real-World Robot Demos',
+  desc: 'Real robot executions under practical disturbances and long-horizon tasks.',
+  videos: [
+    {
+      title: 'Cook Vegetable',
+      src: asset('Demo/Real_world/cook_vegetable.mp4'),
+    },
+    {
+      title: 'Pick Fruits',
+      src: asset('Demo/Real_world/pick_fruits.mp4'),
+    },
+    {
+      title: 'Pour Water with Human Perturbation',
+      src: asset('Demo/Real_world/pour_water_with_perturbation.mp4'),
+    },
+    {
+      title: 'Pour Water with Human Perturbation2',
+      src: asset('Demo/Real_world/pour_water_with_perturbation2.mp4'),
+    },
+  ],
+}
+
 ]
 
 export const resources = [
