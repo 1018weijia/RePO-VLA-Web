@@ -138,7 +138,12 @@ import {
           <p>{{ section.desc }}</p>
         </div>
         <div class="video-grid">
-          <article v-for="video in section.videos" :key="video.src" class="video-card">
+          <article
+            v-for="video in section.videos"
+            :key="video.src"
+            class="video-card"
+            :class="{ 'video-card-4-3': section.layout === 'real-world' }"
+          >
             <video :src="video.src" controls muted playsinline preload="metadata"></video>
             <div class="video-title">{{ video.title }}</div>
           </article>
@@ -553,6 +558,13 @@ h3 {
     aspect-ratio: 16 / 9;
     background: #e2e8f0;
     object-fit: cover;
+  }
+}
+
+.video-card-4-3 {
+  video {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
   }
 }
 
