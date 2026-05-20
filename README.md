@@ -1,50 +1,63 @@
-# ATeam
+# RePO-VLA Project Website
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository contains the official project page source for:
 
-# How to update
+**RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Models**
 
-Just need to update the data in this file:
-src\mock\data.ts
+Built with Vue 3 + Vite, deployed to GitHub Pages.
 
-## Recommended IDE Setup
+## How to Update Website Content
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Main content is configured in:
 
-## Type Support for `.vue` Imports in TS
+- `src/mock/data.ts`
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+This file controls:
 
-## Customize configuration
+- title / subtitle / abstract
+- author and affiliation display
+- figures and captions
+- demo video sections
+- resource links and BibTeX
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Media Assets
 
-## Project Setup
+Put static assets under `public/`, for example:
+
+- `public/Figures/` for figures and logos
+- `public/Demo/` for demo videos
+
+Use `asset('...')` paths in `src/mock/data.ts` for references.
+
+## Development
+
+Install dependencies:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Run local dev server:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Type-check:
+
+```sh
+npm run type-check
+```
+
+Build for production:
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Deployment
 
-```sh
-npm run test:unit
-```
+This project is configured for GitHub Pages deployment via GitHub Actions.
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Ensure `vite.config.ts` uses the correct `base` for your repository path.
+- Push to `main` to trigger deployment workflow.
