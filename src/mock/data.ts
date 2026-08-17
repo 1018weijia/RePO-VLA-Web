@@ -52,8 +52,8 @@ export const affiliations = affiliationItems.map(item => item.name)
 export const institutionLogos = [
   { name: 'Sun Yat-sen University', src: asset('Figures/sysu.png') },
   { name: 'South China University of Technology', src: asset('Figures/scut.jpg') },
-  { name: 'Peng Cheng Laboratory', src: asset('Figures/pcl.png') },
-  { name: 'Harbin Institute of Technology', src: asset('Figures/hit.png') },
+  { name: 'Pengcheng Laboratory', src: asset('Figures/pcl.png') },
+  { name: 'Harbin Institute of Technology, Shenzhen', src: asset('Figures/hit.png') },
   { name: 'Institute of Automation, Chinese Academy of Sciences', src: asset('Figures/CASIA.jpg') },
   { name: "Huawei Noah's Ark Lab", src: asset('Figures/Huawei.png') },
 ]
