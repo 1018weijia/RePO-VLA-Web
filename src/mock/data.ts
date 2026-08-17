@@ -34,8 +34,8 @@ export const authorEntries = [
 export const affiliationItems = [
   { id: 1, name: 'Sun Yat-sen University' },
   { id: 2, name: 'South China University of Technology' },
-  { id: 3, name: 'Peng Cheng Laboratory' },
-  { id: 4, name: 'Harbin Institute of Technology' },
+  { id: 3, name: 'Pengcheng Laboratory' },
+  { id: 4, name: 'Harbin Institute of Technology, Shenzhen' },
   { id: 5, name: 'Institute of Automation, Chinese Academy of Sciences' },
   { id: 6, name: "Huawei Noah's Ark Lab" },
 ]
