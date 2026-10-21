@@ -28,7 +28,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
       <a class="wordmark" href="#top" aria-label="RePO-VLA home" @click="closeMenu"
         ><span class="brand-icon"><AppIcon name="recovery" :size="20" /></span>RePO<span
           class="wordmark-dash"
-          >–</span
+          >-</span
         >VLA</a
       >
       <nav class="desktop-nav" aria-label="Main navigation">

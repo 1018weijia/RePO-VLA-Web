@@ -87,7 +87,7 @@ onBeforeUnmount(() => clearTimeout(copyTimer))
           </div>
           <h1 class="hero-title">
             <span class="hero-wordmark"
-              ><span class="title-recovery">RePO</span><span class="title-dash">–</span
+              ><span class="title-recovery">RePO</span><span class="title-dash">-</span
               ><span class="title-action">VLA</span><span class="title-colon">:</span></span
             >
             {{ ' ' }}
@@ -452,7 +452,7 @@ onBeforeUnmount(() => clearTimeout(copyTimer))
     <footer class="footer">
       <div class="shell footer-inner">
         <a href="#top" class="footer-brand"
-          ><AppIcon name="recovery" :size="21" /> RePO–VLA<span>NeurIPS 2026</span></a
+          ><AppIcon name="recovery" :size="21" /> RePO-VLA<span>NeurIPS 2026</span></a
         ><span>Learning to recover. Continuing to act.</span
         ><a href="#top" class="back-top">Back to top <span>↑</span></a>
       </div>
