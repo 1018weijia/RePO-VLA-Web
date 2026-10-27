@@ -60,7 +60,7 @@ export const institutionLogos = [
 ]
 
 export const projectLinks = [
-  { label: 'Read the paper', href: asset('paper/RePO-VLA.pdf'), kind: 'paper' },
+  { label: 'Read the paper', href: 'https://arxiv.org/pdf/2605.09410', kind: 'paper' },
   { label: 'Code', href: 'https://github.com/1018weijia/FR_Bench', kind: 'github' },
   { label: 'Dataset', href: 'https://huggingface.co/datasets/Jerry2003/FR_Bench', kind: 'dataset' },
   { label: 'BibTeX', href: '#citation', kind: 'cite' },

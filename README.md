@@ -26,9 +26,9 @@ Resource destinations:
 
 - Code: https://github.com/1018weijia/FR_Bench
 - Dataset: https://huggingface.co/datasets/Jerry2003/FR_Bench
-- Paper: `public/paper/RePO-VLA.pdf`, copied from the supplied camera-ready paper project.
+- Paper: https://arxiv.org/pdf/2605.09410
 
-When the paper changes, update the content and replace the local PDF together. The site uses the supplied PDF rather than an unverified arXiv identifier. The citation follows the camera-ready title and author list.
+Paper links use the arXiv PDF above. The supplied camera-ready PDF is retained in `public/paper/RePO-VLA.pdf` as a local reference. The citation follows the camera-ready title and author list.
 
 ## Media
 
